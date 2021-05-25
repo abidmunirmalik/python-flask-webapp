@@ -1,8 +1,9 @@
 // Scripted Pipeline - single-line comment
 
 node('master') {
-    git url: 'https://github.com/abidmunirmalik/python-flask-webapp.git'
-
+    stage('Checkout SCM') {
+        git url: 'https://github.com/abidmunirmalik/python-flask-webapp.git'
+    }
     stage('Build Image') {
         buildImage()
     }
