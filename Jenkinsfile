@@ -10,6 +10,7 @@ node('master') {
 // Step functions
 def buildImage() {
     println("Building Docker Image...")
-    dir('scripts') { sh "./buildImage.sh" }
+    def dockerImage = "abidmunirmalik/python-flask-webapp"
+    def appImage = docker.build("${dockerImage}:${BUILD_NUMBER")
 }
 
