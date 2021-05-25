@@ -1,6 +1,6 @@
 // Scripted Pipeline - single-line comment
 
-node('master') {
+node('vjenkinsslv03 (waops)') {
     stage('Checkout SCM') {
         git url: 'https://github.com/abidmunirmalik/python-flask-webapp.git'
     }
