@@ -11,6 +11,6 @@ node('master') {
 def buildImage() {
     println("Building Docker Image...")
     def dockerImage = "abidmunirmalik/python-flask-webapp"
-    def appImage = docker.build("${dockerImage}:${BUILD_NUMBER")
+    def appImage = docker.build("${dockerImage}:${BUILD_NUMBER}")
 }
 
