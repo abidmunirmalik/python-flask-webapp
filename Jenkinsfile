@@ -16,6 +16,6 @@ def buildImage() {
     println("Building Docker Image...")
     //def dockerImage = "abidmunirmalik/python-flask-webapp"
     //def appImage = docker.build("${dockerImage}:${BUILD_NUMBER}")
-    sh 'docker build -t "abidmunirmalik/python-flask-webapp ."'
+    sh 'docker build -t "abidmunirmalik/python-flask-webapp" .'
 }
 
