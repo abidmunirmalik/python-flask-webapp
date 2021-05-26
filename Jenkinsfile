@@ -1,6 +1,6 @@
 // Scripted Pipeline - single-line comment
 
-node('vjenkinsslv03 (waops)') {
+node('master') {
     properties(
         [buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '1')), disableConcurrentBuilds()]
     )
