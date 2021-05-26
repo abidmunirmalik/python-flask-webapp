@@ -2,7 +2,7 @@
 
 node('vjenkinsslv03 (waops)') {
     properties(
-        [buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')), disableConcurrentBuilds()]
+        [buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '1')), disableConcurrentBuilds()]
     )
     stage('Checkout SCM') {
         git url: 'https://github.com/abidmunirmalik/python-flask-webapp.git'
@@ -14,8 +14,7 @@ node('vjenkinsslv03 (waops)') {
 // Step functions
 def buildImage() {
     println("Building Docker Image...")
-    //def dockerImage = "abidmunirmalik/python-flask-webapp"
-    //def appImage = docker.build("${dockerImage}:${BUILD_NUMBER}")
-    sh 'docker build -t "abidmunirmalik/python-flask-webapp" .'
+    def dockerImage = "abidmunirmalik/python-flask-webapp"
+    def appImage = docker.build("${dockerImage}:${BUILD_NUMBER}")
 }
 
